@@ -1,0 +1,97 @@
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* --- Estilos do Cartão de Perfil (Verde) --- */
+.card-perfil {
+    background-color: #2ecc71; /* Verde do print */
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s;
+}
+
+/* Imagem do perfil */
+.profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid rgba(255,255,255,0.3);
+    object-fit: cover;
+}
+
+/* Botão Editar */
+.btn-editar {
+    background-color: #3b5998;
+    color: white;
+    font-weight: 600;
+    padding: 8px 24px;
+    border-radius: 8px;
+    border: none;
+}
+.btn-editar:hover {
+    background-color: #2d4373;
+    color: white;
+}
+
+/* --- Ajustes de Ícones e Listas --- */
+.icon-box {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.action-item {
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.action-item:hover {
+    background-color: #f8f9fa;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+/* --- RESPONSIVIDADE (O Segredo está aqui) --- */
+
+/* Quando estiver no CELULAR (telas menores que 768px) */
+@media (max-width: 767.98px) {
+    /* Removemos o container lateral para o verde ocupar tudo no topo */
+    .container.main-content {
+        padding-left: 0;
+        padding-right: 0;
+        max-width: 100%;
+    }
+
+    /* O cartão verde perde as bordas arredondadas superiores para parecer um header */
+    .card-perfil {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+    }
+
+    /* As colunas do conteúdo ficam com um pouco de margem lateral */
+    .col-md-8 {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+/* Quando estiver no PC (telas maiores que 768px) */
+@media (min-width: 768px) {
+    .mobile-nav-icons {
+        display: none !important; /* Esconde setinha de voltar no PC, pois tem navbar */
+    }
+    
+    .card-perfil {
+        position: sticky; /* Faz o perfil acompanhar a rolagem */
+        top: 20px;
+    }
+}
